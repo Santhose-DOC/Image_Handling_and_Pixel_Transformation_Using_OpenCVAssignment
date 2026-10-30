@@ -168,18 +168,54 @@ print("Processed image saved successfully.")
 The following outputs are obtained after executing the program:
 
 1.  Original input image displayed.
+
+![alt text](image.png)
+
 2.  Image with a diagonal line drawn from top-left to bottom-right.
+
+![alt text](image-1.png)
+
 3.  Image with a circle at its center.
+
+![alt text](image-2.png)
+
 4.  Image with a rectangular border.
+
+![alt text](image-3.png)
+
 5.  Image displaying the text **OpenCV Drawing**.
+
+![alt text](image-4.png)
+
 6.  HSV, grayscale, and YCrCb versions of the image.
+
+![alt text](image-5.png)
+
 7.  Image converted from HSV back to RGB.
+
+![alt text](image-6.png)
+
 8.  Image with the selected pixel changed to white.
+
+![alt text](image-9.png)
+
 9.  Resized image with half the original width and height.
+
+![alt text](image-10.png)
+
 10. Cropped region of interest (ROI).
+
+![alt text](image-11.png)
+
 11. Horizontally flipped image.
+
+![alt text](image-12.png)
+
 12. Vertically flipped image.
-13. Processed image saved as `processed_image.jpg`.
+
+![alt text](image-13.png)
+
+
 
 ## RESULT
 
