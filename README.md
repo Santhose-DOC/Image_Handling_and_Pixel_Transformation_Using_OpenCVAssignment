@@ -7,6 +7,11 @@ Python and OpenCV, including drawing shapes and text, color-space
 conversion, pixel modification, resizing, cropping, flipping, and saving
 the processed image.
 
+## Input Image
+
+![alt text](my.jpeg)
+
+
 ## PROCEDURE
 
 1.  Import the required libraries: OpenCV (`cv2`) and Matplotlib
@@ -29,139 +34,232 @@ the processed image.
     results.
 12. Save the final processed image using `cv2.imwrite()`.
 
+
+
 ## PROGRAM
 
-``` python
+### 1. Import Libraries and Display Original Image
+
+```python
 import cv2
 import matplotlib.pyplot as plt
 
-# Read and display the original image
-image = cv2.imread("Qno. 1.jpg", cv2.IMREAD_COLOR)
+# Read the image
+img = cv2.imread('my.jpeg', cv2.IMREAD_COLOR)
 
-if image is None:
-    raise FileNotFoundError("Qno. 1.jpg not found in the current directory.")
+# Convert BGR to RGB
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
+# Display original image
+plt.imshow(img_rgb)
+plt.title("Original Image")
+plt.axis('off')
+plt.show()
+```
+
+### 2. Drawing a Line
+
+```python
+image = cv2.imread('my.jpeg')
+img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+line_img = cv2.line(img_rgb, (0, 0), (900, 1200), (255, 0, 0), 10)
+
+plt.imshow(line_img)
+plt.title("Image with Line")
+plt.axis('off')
+plt.show()
+```
+
+### 3. Drawing a Circle
+
+```python
+image = cv2.imread('my.jpeg')
+img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+circle_img = cv2.circle(img_rgb, (450, 400), 250, (255, 0, 0), 10)
+
+plt.imshow(circle_img)
+plt.title("Image with Circle")
+plt.axis('off')
+plt.show()
+```
+
+### 4. Drawing a Rectangle
+
+```python
+image = cv2.imread('my.jpeg')
+img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+rectangle_img = cv2.rectangle(img_rgb, (100, 50), (750, 600), (0, 0, 255), 10)
+
+plt.imshow(rectangle_img)
+plt.title("Image with Rectangle")
+plt.axis('off')
+plt.show()
+```
+
+### 5. Adding Text to Image
+
+```python
+image = cv2.imread('my.jpeg')
+img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+text_img = cv2.putText(
+    img_rgb,
+    "OpenCV Drawing",
+    (10, 30),
+    cv2.FONT_HERSHEY_SIMPLEX,
+    1,
+    (0, 0, 0),
+    10
+)
+
+plt.imshow(text_img)
+plt.title("Image with Text")
+plt.axis('off')
+plt.show()
+```
+
+### 6. Color Space Conversion
+
+```python
+image = cv2.imread('my.jpeg')
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+# RGB Image
 plt.imshow(image_rgb)
-plt.title("Original Image")
+plt.title("Original RGB Image")
 plt.axis("off")
 plt.show()
 
-# Draw a line
-line_img = image_rgb.copy()
-cv2.line(line_img, (0, 0), (image.shape[1] - 1, image.shape[0] - 1),
-         (255, 0, 0), 2)
-
-# Draw a circle at the center
-circle_img = image_rgb.copy()
-center = (image.shape[1] // 2, image.shape[0] // 2)
-cv2.circle(circle_img, center, 150, (255, 0, 0), 10)
-
-# Draw a rectangle around the image
-rectangle_img = image_rgb.copy()
-cv2.rectangle(rectangle_img, (0, 0),
-              (image.shape[1] - 1, image.shape[0] - 1),
-              (0, 0, 255), 10)
-
-# Add text
-text_img = image_rgb.copy()
-cv2.putText(text_img, "OpenCV Drawing", (10, 30),
-            cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
-
-# Display drawing operations
-for result, title in [
-    (line_img, "Image with Line"),
-    (circle_img, "Image with Circle"),
-    (rectangle_img, "Image with Rectangle"),
-    (text_img, "Image with Text")
-]:
-    plt.imshow(result)
-    plt.title(title)
-    plt.axis("off")
-    plt.show()
-
-# Color-space conversions
+# RGB to HSV
 image_hsv = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2HSV)
-image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
-image_ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
-image_hsv_to_rgb = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2RGB)
 
-plt.figure()
 plt.imshow(image_hsv)
 plt.title("HSV Image")
 plt.axis("off")
 plt.show()
 
-plt.figure()
-plt.imshow(image_gray, cmap="gray")
+# RGB to Grayscale
+image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
+
+plt.imshow(image_gray, cmap='gray')
 plt.title("Grayscale Image")
 plt.axis("off")
 plt.show()
 
-plt.figure()
+# RGB to YCrCb
+image_ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
+
 plt.imshow(image_ycrcb)
 plt.title("YCrCb Image")
 plt.axis("off")
 plt.show()
 
-plt.figure()
+# HSV to RGB
+image_hsv_to_rgb = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2RGB)
+
 plt.imshow(image_hsv_to_rgb)
 plt.title("HSV to RGB Image")
 plt.axis("off")
 plt.show()
+```
 
-# Access and print pixel value at (100, 100)
-pixel_value = image[100, 100]
-print("Pixel value at (100, 100):", pixel_value)
+### 7. Pixel Transformation
 
-# Modify the pixel at (200, 200) to white
-modified_image = image.copy()
-modified_image[200, 200] = [255, 255, 255]
+```python
+image = cv2.imread('my.jpeg')
 
-# To modify a 300 x 300 white region instead, use:
-# modified_image[200:500, 200:500] = [255, 255, 255]
+# Modify pixel region to white
+image[200:600, 200:800] = [255, 255, 255]
 
-plt.imshow(cv2.cvtColor(modified_image, cv2.COLOR_BGR2RGB))
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+plt.imshow(image_rgb)
 plt.title("Modified Image")
 plt.axis("off")
 plt.show()
+```
 
-# Resize image to half its size
-height, width = image.shape[:2]
-resized_image = cv2.resize(image, (width // 2, height // 2))
+### 8. Resizing Image
 
-plt.imshow(cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB))
-plt.title("Resized Image (Half Size)")
+```python
+image = cv2.imread('my.jpeg')
+
+print(image.shape)
+
+# Resize image to half size
+resized_image = cv2.resize(image, (768 // 2, 600 // 2))
+
+resized_image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+print(resized_image_rgb.shape)
+
+plt.imshow(resized_image_rgb)
+plt.title("Resized Image")
 plt.axis("off")
 plt.show()
+```
 
-# Crop a 300 x 300 ROI starting at (50, 50)
+### 9. Cropping Image (ROI)
+
+```python
+image = cv2.imread('my.jpeg')
+
+print(image.shape)
+
+# Crop a region of interest
 roi = image[50:350, 50:350]
 
-plt.imshow(cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
+roi_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+
+plt.imshow(roi_rgb)
 plt.title("Cropped Region of Interest")
 plt.axis("off")
 plt.show()
+```
 
-# Horizontal and vertical flips
+### 10. Horizontal Flip
+
+```python
+image = cv2.imread('my.jpeg')
+
 flipped_horizontally = cv2.flip(image, 1)
-flipped_vertically = cv2.flip(image, 0)
 
-plt.imshow(cv2.cvtColor(flipped_horizontally, cv2.COLOR_BGR2RGB))
+flipped_horizontally_rgb = cv2.cvtColor(
+    flipped_horizontally, cv2.COLOR_BGR2RGB
+)
+
+plt.imshow(flipped_horizontally_rgb)
 plt.title("Flipped Horizontally")
 plt.axis("off")
 plt.show()
+```
 
-plt.imshow(cv2.cvtColor(flipped_vertically, cv2.COLOR_BGR2RGB))
+### 11. Vertical Flip
+
+```python
+flipped_vertically = cv2.flip(image, 0)
+
+flipped_vertically_rgb = cv2.cvtColor(
+    flipped_vertically, cv2.COLOR_BGR2RGB
+)
+
+plt.imshow(flipped_vertically_rgb)
 plt.title("Flipped Vertically")
 plt.axis("off")
 plt.show()
-
-# Save the processed image
-cv2.imwrite("processed_image.jpg", modified_image)
-print("Processed image saved successfully.")
 ```
+
+### 12. Saving Processed Image
+
+```python
+cv2.imwrite("processed_image.jpg", image)
+
+print("Image saved successfully")
+```
+
 
 ## OUTPUT
 
