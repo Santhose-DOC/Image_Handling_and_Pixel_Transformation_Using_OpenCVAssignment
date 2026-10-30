@@ -1,4 +1,6 @@
 # Experiment 1: Basic Image Processing Using OpenCV
+### Name : Santhose Arockiaraj J
+### Reg no: 212224230248
 
 ## AIM
 
@@ -9,7 +11,8 @@ the processed image.
 
 ## Input Image
 
-![alt text](my.jpeg)
+<img width="864" height="1154" alt="my" src="https://github.com/user-attachments/assets/9bd6904f-3e7d-4aae-90af-02819c05ecef" />
+
 
 
 ## PROCEDURE
@@ -265,53 +268,59 @@ print("Image saved successfully")
 
 The following outputs are obtained after executing the program:
 
-1.  Original input image displayed.
+### 1.  Original input image displayed.
 
-![alt text](image.png)
+<img width="233" height="321" alt="Screenshot 2026-10-30 153723" src="https://github.com/user-attachments/assets/506798a0-b482-4d6d-bb02-5e7fd4ba56f0" />
 
-2.  Image with a diagonal line drawn from top-left to bottom-right.
 
-![alt text](image-1.png)
+### 2.  Image with a diagonal line drawn from top-left to bottom-right.
 
-3.  Image with a circle at its center.
+<img width="238" height="328" alt="Screenshot 2026-10-30 153736" src="https://github.com/user-attachments/assets/c8a912d4-068c-4bb0-a713-58f1ebac8cbc" />
 
-![alt text](image-2.png)
+### 3.  Image with a circle at its center.
 
-4.  Image with a rectangular border.
+<img width="237" height="323" alt="Screenshot 2026-10-30 153747" src="https://github.com/user-attachments/assets/ebdce3f3-d767-481a-9f1f-8db863c3b406" />
 
-![alt text](image-3.png)
+### 4.  Image with a rectangular border.
 
-5.  Image displaying the text **OpenCV Drawing**.
+<img width="233" height="318" alt="Screenshot 2026-10-30 153801" src="https://github.com/user-attachments/assets/5b78b150-73d2-4360-a387-64f8bf58b589" />
 
-![alt text](image-4.png)
+### 5.  Image displaying the text **OpenCV Drawing**.
 
-6.  HSV, grayscale, and YCrCb versions of the image.
+<img width="247" height="327" alt="Screenshot 2026-10-30 153813" src="https://github.com/user-attachments/assets/469f140b-0df3-4543-bd08-f2200048dfdf" />
 
-![alt text](image-5.png)
+### 6.  HSV, grayscale, and YCrCb versions of the image.
 
-7.  Image converted from HSV back to RGB.
+<img width="273" height="368" alt="Screenshot 2026-10-30 154108" src="https://github.com/user-attachments/assets/7411dcb7-2564-47e3-93fe-5e27cf633f29" />
 
-![alt text](image-6.png)
+<img width="273" height="369" alt="Screenshot 2026-10-30 154127" src="https://github.com/user-attachments/assets/3f55e4b0-554b-48ae-8e40-142ce9af24f1" />
 
-8.  Image with the selected pixel changed to white.
+<img width="274" height="366" alt="Screenshot 2026-10-30 154133" src="https://github.com/user-attachments/assets/9db0e23d-2468-4d7f-b0d2-844e280db1e9" />
 
-![alt text](image-9.png)
 
-9.  Resized image with half the original width and height.
+### 7.  Image converted from HSV back to RGB.
 
-![alt text](image-10.png)
+<img width="284" height="372" alt="Screenshot 2026-10-30 154451" src="https://github.com/user-attachments/assets/c6b439fd-b6c2-40a3-b857-f251e7882246" />
 
-10. Cropped region of interest (ROI).
+### 8.  Image with the selected pixel changed to white.
 
-![alt text](image-11.png)
+<img width="406" height="562" alt="Screenshot 2026-10-30 161657" src="https://github.com/user-attachments/assets/49eb0de5-c1bd-4783-9efd-aa7015d9d7de" />
 
-11. Horizontally flipped image.
+### 9.  Resized image with half the original width and height.
 
-![alt text](image-12.png)
+<img width="529" height="385" alt="Screenshot 2026-10-30 154506" src="https://github.com/user-attachments/assets/0d8cffb7-239f-4a59-aaeb-e72e62bdbac5" />
 
-12. Vertically flipped image.
+### 10. Cropped region of interest (ROI).
 
-![alt text](image-13.png)
+<img width="384" height="384" alt="Screenshot 2026-10-30 154521" src="https://github.com/user-attachments/assets/ed7aea5c-53a2-495d-aeba-35080163467b" />
+
+### 11. Horizontally flipped image.
+
+<img width="281" height="374" alt="Screenshot 2026-10-30 154530" src="https://github.com/user-attachments/assets/dc2a23ab-399b-4460-a5c8-5bb270ff3b85" />
+
+### 12. Vertically flipped image.
+
+<img width="313" height="402" alt="Screenshot 2026-10-30 154539" src="https://github.com/user-attachments/assets/7b436f41-87ee-4ee3-92ed-7507635fe444" />
 
 
 
